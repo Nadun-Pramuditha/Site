@@ -1,0 +1,1900 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Accelarator 2025 • Startup Growth, Entrepreneurship & Smart Investing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ACCELERATOR - a deep dive into startup growth, entrepreneurship and smart investing. Join us for an inspiring panel discussion with top founders, digital strategists and business consultants. Organized by the Computer Science Students' Association (CSSA), University of Kelaniya." />
+  <style>
+    /* ------------------------------
+       Base Styles & Variables
+    ------------------------------ */
+    :root {
+      --bg-main: #050608;
+      --bg-elevated: #0d1017;
+      --bg-elevated-soft: #131827;
+      --accent-yellow: #ffd54a;
+      --accent-blue: #42a5ff;
+      --text-main: #f5f7ff;
+      --text-muted: #a0a4b8;
+      --border-subtle: #22263a;
+      --danger: #ff7070;
+      --radius-lg: 16px;
+      --radius-md: 10px;
+      --radius-sm: 6px;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.6);
+      --transition-fast: 0.18s ease-out;
+      --transition-med: 0.28s ease-out;
+      --nav-height: 64px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, sans-serif;
+      background: radial-gradient(circle at top, #141936 0, #050608 55%);
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      border: none;
+      cursor: pointer;
+      background: none;
+    }
+
+    main {
+      padding-top: var(--nav-height);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    section {
+      padding: 4rem 0;
+      position: relative;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    p {
+      font-size: 0.98rem;
+    }
+
+    .section-heading {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-subtitle {
+      color: var(--accent-blue);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-description {
+      color: var(--text-muted);
+      max-width: 640px;
+      margin-bottom: 2rem;
+      font-size: 0.96rem;
+    }
+
+    /* ------------------------------
+       Animated Background for Hero
+    ------------------------------ */
+    .hero-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(96, 165, 250, 0.18) 0, transparent 45%),
+        radial-gradient(circle at 80% 0%, rgba(245, 158, 11, 0.18) 0, transparent 50%),
+        radial-gradient(circle at 50% 100%, rgba(56, 189, 248, 0.15) 0, transparent 50%),
+        radial-gradient(circle at -10% 100%, rgba(129, 140, 248, 0.18) 0, transparent 55%);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .hero-orbits {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .orbit {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px dashed rgba(148, 163, 255, 0.22);
+      box-shadow: 0 0 24px rgba(59, 130, 246, 0.18);
+      animation: rotate-orbit 26s linear infinite;
+    }
+
+    .orbit--1 {
+      width: 420px;
+      height: 420px;
+      top: -120px;
+      right: -80px;
+    }
+
+    .orbit--2 {
+      width: 260px;
+      height: 260px;
+      bottom: -80px;
+      left: -60px;
+      animation-duration: 32s;
+      animation-direction: reverse;
+    }
+
+    .orbit-dot {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, var(--accent-yellow), #ff9100);
+      box-shadow: 0 0 16px rgba(251, 191, 36, 0.9);
+      top: 50%;
+      translate: 0 -50%;
+      right: -6px;
+    }
+
+    @keyframes rotate-orbit {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* ------------------------------
+       Header & Navigation
+    ------------------------------ */
+    header {
+      position: fixed;
+      inset-inline: 0;
+      top: 0;
+      height: var(--nav-height);
+      z-index: 40;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(
+          to bottom,
+          rgba(5, 6, 8, 0.96),
+          rgba(5, 6, 8, 0.86),
+          transparent
+        );
+      border-bottom: 1px solid rgba(31, 41, 55, 0.8);
+    }
+
+    .nav {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .nav-logo {
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .nav-logo-mark {
+      width: 22px;
+      height: 22px;
+      border-radius: 8px;
+      background: conic-gradient(
+        from 180deg,
+        #38bdf8,
+        #6366f1,
+        #facc15,
+        #f97316,
+        #22c55e,
+        #38bdf8
+      );
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.9);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-logo-mark::after {
+      content: "";
+      position: absolute;
+      inset: 15%;
+      background: radial-gradient(circle at 30% 30%, #0b1120, transparent 60%);
+      mix-blend-mode: multiply;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-link {
+      font-size: 0.86rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 0.35rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: color var(--transition-fast), background var(--transition-fast),
+        border-color var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .nav-link:hover {
+      color: var(--text-main);
+      background: rgba(31, 41, 55, 0.85);
+      border-color: rgba(55, 65, 81, 0.9);
+      transform: translateY(-1px);
+    }
+
+    .nav-link.active {
+      color: var(--bg-main);
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-yellow));
+      border-color: transparent;
+      box-shadow: 0 0 18px rgba(79, 70, 229, 0.7);
+    }
+
+    .nav-cta {
+      display: none;
+    }
+
+    .nav-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: rgba(17, 24, 39, 0.9);
+      color: var(--text-main);
+      position: relative;
+      z-index: 45;
+      transition: background var(--transition-fast), border-color var(--transition-fast),
+        transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .nav-toggle:hover {
+      background: rgba(31, 41, 55, 0.95);
+      border-color: rgba(148, 163, 184, 0.8);
+      box-shadow: 0 0 12px rgba(148, 163, 184, 0.6);
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle-bars {
+      width: 16px;
+      height: 12px;
+      position: relative;
+    }
+
+    .nav-toggle-bars span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--text-main);
+      transition: transform var(--transition-med), opacity var(--transition-med),
+        top var(--transition-med), bottom var(--transition-med);
+    }
+
+    .nav-toggle-bars span:nth-child(1) {
+      top: 0;
+    }
+
+    .nav-toggle-bars span:nth-child(2) {
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.9;
+    }
+
+    .nav-toggle-bars span:nth-child(3) {
+      bottom: 0;
+    }
+
+    .nav-toggle.open .nav-toggle-bars span:nth-child(1) {
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    .nav-toggle.open .nav-toggle-bars span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle.open .nav-toggle-bars span:nth-child(3) {
+      bottom: auto;
+      top: 50%;
+      transform: translateY(-50%) rotate(-45deg);
+    }
+
+    .nav-menu {
+      position: fixed;
+      inset-inline: 0;
+      top: var(--nav-height);
+      background: radial-gradient(circle at top, #020617, #020617 50%, #020617ee 100%);
+      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+      transform-origin: top;
+      transform: scaleY(0.7);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform var(--transition-med), opacity var(--transition-med);
+    }
+
+    .nav-menu.open {
+      opacity: 1;
+      pointer-events: auto;
+      transform: scaleY(1);
+    }
+
+    .nav-menu-inner {
+      padding: 0.9rem 1.25rem 1.1rem;
+    }
+
+    .nav-links--mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4rem;
+    }
+
+    .nav-links--mobile .nav-link {
+      width: 100%;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.6rem;
+    }
+
+    @media (min-width: 720px) {
+      .nav-toggle {
+        display: none;
+      }
+
+      .nav-menu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        pointer-events: auto;
+        background: transparent;
+        border-bottom: none;
+      }
+
+      .nav-menu-inner {
+        padding: 0;
+      }
+
+      .nav-links--mobile {
+        display: none;
+      }
+
+      .nav-links--desktop {
+        display: flex;
+      }
+
+      .nav-cta {
+        display: inline-flex;
+      }
+    }
+
+    @media (max-width: 719px) {
+      .nav-links--desktop {
+        display: none;
+      }
+    }
+
+    /* ------------------------------
+       Hero Section
+    ------------------------------ */
+    #home {
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      align-items: center;
+    }
+
+    .hero {
+      padding-top: 1.6rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 2.6rem;
+    }
+
+    .hero-intro-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.18rem 0.4rem 0.18rem 0.2rem;
+      border-radius: 999px;
+      background: rgba(17, 24, 39, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      margin-bottom: 1rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .hero-intro-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #22c55e, #166534);
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+      position: relative;
+    }
+
+    .hero-intro-dot::after {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border-radius: inherit;
+      border: 1px solid rgba(34, 197, 94, 0.45);
+    }
+
+    .hero-heading {
+      font-size: clamp(2.4rem, 6vw, 3.4rem);
+      line-height: 1.05;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-heading span {
+      background: linear-gradient(135deg, #38bdf8, #a855f7, #facc15);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-tagline {
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-blue);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-desc {
+      color: var(--text-muted);
+      max-width: 540px;
+      margin-bottom: 1.4rem;
+      font-size: 0.98rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.1rem;
+      row-gap: 0.5rem;
+      margin-bottom: 1.75rem;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    .hero-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+    }
+
+    .hero-meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.7rem;
+      color: var(--accent-yellow);
+    }
+
+    .hero-meta-value {
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: background var(--transition-fast),
+        color var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast),
+        border-color var(--transition-fast);
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-yellow));
+      color: #020617;
+      box-shadow: 0 0 18px rgba(59, 130, 246, 0.7);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px) translateZ(0);
+      box-shadow: 0 0 26px rgba(59, 130, 246, 0.9);
+      filter: brightness(1.05);
+    }
+
+    .btn-outline {
+      color: var(--text-main);
+      background: rgba(15, 23, 42, 0.9);
+      border-color: rgba(55, 65, 81, 0.9);
+    }
+
+    .btn-outline:hover {
+      background: rgba(31, 41, 55, 0.98);
+      border-color: rgba(148, 163, 184, 0.9);
+      transform: translateY(-1px);
+      box-shadow: 0 0 18px rgba(148, 163, 184, 0.6);
+    }
+
+    .btn-ghost-nav {
+      padding: 0.4rem 0.9rem;
+      font-size: 0.78rem;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--accent-yellow);
+      letter-spacing: 0.15em;
+    }
+
+    .btn-ghost-nav:hover {
+      background: rgba(31, 41, 55, 0.98);
+      border-color: rgba(148, 163, 184, 0.9);
+      box-shadow: 0 0 18px rgba(250, 204, 21, 0.7);
+    }
+
+    .hero-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .hero-note-pill {
+      padding: 0.16rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-blue);
+    }
+
+    .hero-showcase {
+      background: radial-gradient(circle at top, #0b1120, #020617);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 1.3rem 1.1rem 1.1rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-showcase::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0 0, rgba(59, 130, 246, 0.25), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(250, 204, 21, 0.24), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(236, 72, 153, 0.18), transparent 55%);
+      opacity: 0.9;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .hero-showcase-inner {
+      position: relative;
+      border-radius: 12px;
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 1.1rem 1.1rem 1.15rem;
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.96));
+      overflow: hidden;
+    }
+
+    .hero-showcase-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-showcase-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .hero-showcase-badge {
+      padding: 0.18rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(22, 101, 52, 0.3);
+      border: 1px solid rgba(34, 197, 94, 0.6);
+      color: #bbf7d0;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-showcase-grid {
+      display: grid;
+      gap: 0.75rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    .hero-showcase-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .hero-showcase-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.8);
+      margin-right: 0.35rem;
+    }
+
+    .hero-showcase-topic {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .hero-showcase-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.74rem;
+      color: var(--text-muted);
+    }
+
+    .hero-showcase-pulse {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, var(--accent-yellow), #f97316);
+      box-shadow: 0 0 16px rgba(250, 204, 21, 0.8);
+      position: relative;
+      margin-right: 0.5rem;
+    }
+
+    .hero-showcase-pulse::after {
+      content: "";
+      position: absolute;
+      inset: -5px;
+      border-radius: inherit;
+      border: 1px solid rgba(250, 204, 21, 0.6);
+      animation: pulse 1.6s ease-out infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 0.8;
+        transform: scale(0.7);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1.4);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+        align-items: center;
+      }
+      .hero {
+        padding-top: 2.8rem;
+        padding-bottom: 4.4rem;
+      }
+    }
+
+    /* ------------------------------
+       About Section
+    ------------------------------ */
+    .about-grid {
+      display: grid;
+      gap: 1.8rem;
+    }
+
+    .about-info-card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 1.4rem 1.3rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .about-highlight {
+      margin-bottom: 1.3rem;
+      color: var(--text-muted);
+      font-size: 0.96rem;
+    }
+
+    .about-list {
+      display: grid;
+      gap: 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    .about-list-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.9rem;
+      padding: 0.5rem 0.65rem;
+      border-radius: var(--radius-md);
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+    }
+
+    .about-list-label {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .about-list-value {
+      font-weight: 600;
+    }
+
+    @media (min-width: 768px) {
+      .about-grid {
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+        align-items: flex-start;
+      }
+    }
+
+    /* ------------------------------
+       Agenda Section
+    ------------------------------ */
+    .agenda-timeline {
+      border-left: 1px solid rgba(51, 65, 85, 0.9);
+      margin-top: 1.1rem;
+      padding-left: 1.35rem;
+      display: grid;
+      gap: 1.15rem;
+    }
+
+    .agenda-item {
+      position: relative;
+      padding: 0.55rem 0.75rem;
+      border-radius: var(--radius-md);
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(30, 64, 175, 0.7);
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.9);
+    }
+
+    .agenda-item::before {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 2px solid #1d4ed8;
+      background: radial-gradient(circle at 30% 30%, #60a5fa, #1d4ed8);
+      left: -1.98rem;
+      top: 1.1rem;
+      box-shadow: 0 0 18px rgba(59, 130, 246, 0.9);
+    }
+
+    .agenda-time {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-blue);
+      margin-bottom: 0.2rem;
+    }
+
+    .agenda-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .agenda-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    @media (min-width: 768px) {
+      .agenda-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .agenda-note-card {
+        margin-top: 1.65rem;
+      }
+    }
+
+    .agenda-note-card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 1.3rem 1.25rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .agenda-note-tag {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent-yellow);
+      margin-bottom: 0.45rem;
+    }
+
+    /* ------------------------------
+       Speakers Section
+    ------------------------------ */
+    .speakers-grid {
+      margin-top: 1.4rem;
+      display: grid;
+      gap: 1.3rem;
+    }
+
+    .speaker-card {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(37, 99, 235, 0.7);
+      padding: 1.15rem 1.1rem 1.3rem;
+      box-shadow: 0 16px 34px rgba(15, 23, 42, 0.95);
+      transition: transform var(--transition-med),
+        box-shadow var(--transition-med),
+        border-color var(--transition-med),
+        background var(--transition-med);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .speaker-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0 0, rgba(59, 130, 246, 0.18), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(250, 204, 21, 0.16), transparent 55%);
+      opacity: 0;
+      transition: opacity var(--transition-med);
+      pointer-events: none;
+    }
+
+    .speaker-card:hover {
+      transform: translateY(-4px) translateZ(0);
+      box-shadow: 0 24px 55px rgba(15, 23, 42, 0.98);
+      border-color: rgba(96, 165, 250, 0.95);
+      background: radial-gradient(circle at top, #020617, #020617 55%, #020617ee 100%);
+    }
+
+    .speaker-card:hover::before {
+      opacity: 1;
+    }
+
+    .speaker-name {
+      font-size: 1.02rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .speaker-role {
+      font-size: 0.86rem;
+      color: var(--accent-blue);
+      margin-bottom: 0.55rem;
+    }
+
+    .speaker-bio {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .speaker-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .speaker-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      padding: 0.12rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--text-muted);
+    }
+
+    @media (min-width: 640px) {
+      .speakers-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 960px) {
+      .speakers-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    /* ------------------------------
+       Registration Section
+    ------------------------------ */
+    .registration-card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 1.6rem 1.35rem 1.5rem;
+      box-shadow: var(--shadow-soft);
+      margin-top: 0.7rem;
+    }
+
+    form {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    @media (min-width: 720px) {
+      .form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      font-size: 0.88rem;
+    }
+
+    .form-label {
+      font-weight: 500;
+      font-size: 0.86rem;
+    }
+
+    .form-label span {
+      color: #fb7185;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(51, 65, 85, 0.95);
+      padding: 0.55rem 0.6rem;
+      color: var(--text-main);
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color var(--transition-fast),
+        box-shadow var(--transition-fast),
+        background var(--transition-fast);
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: rgba(56, 189, 248, 0.95);
+      box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.8);
+      background: #020617;
+    }
+
+    .form-input::placeholder {
+      color: rgba(148, 163, 184, 0.7);
+    }
+
+    .form-help {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    .form-actions {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .form-status {
+      font-size: 0.82rem;
+      color: var(--accent-blue);
+      display: none;
+    }
+
+    .form-status.visible {
+      display: inline-flex;
+    }
+
+    .form-status.error {
+      color: var(--danger);
+    }
+
+    /* ------------------------------
+       FAQ Section
+    ------------------------------ */
+    .faq-grid {
+      margin-top: 1.2rem;
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .faq-item {
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(51, 65, 85, 0.95);
+      background: rgba(15, 23, 42, 0.96);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 0.7rem 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.7rem;
+      font-size: 0.94rem;
+      font-weight: 500;
+      color: var(--text-main);
+      transition: background var(--transition-fast), color var(--transition-fast);
+    }
+
+    .faq-question:hover {
+      background: rgba(15, 23, 42, 0.98);
+    }
+
+    .faq-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(148, 163, 184, 0.9);
+      flex-shrink: 0;
+      transition: transform var(--transition-med),
+        background var(--transition-med),
+        color var(--transition-med),
+        border-color var(--transition-med);
+    }
+
+    .faq-item.open .faq-question {
+      background: rgba(15, 23, 42, 0.98);
+      color: var(--accent-blue);
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(90deg);
+      background: rgba(37, 99, 235, 0.25);
+      border-color: rgba(59, 130, 246, 0.95);
+      color: var(--accent-yellow);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 0.8rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      transition: max-height var(--transition-med), padding-bottom var(--transition-med);
+    }
+
+    .faq-item.open .faq-answer {
+      padding-bottom: 0.7rem;
+    }
+
+    /* ------------------------------
+       Contact Section & Footer
+    ------------------------------ */
+    #contact .contact-card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 1.4rem 1.3rem;
+      box-shadow: var(--shadow-soft);
+      margin-top: 0.7rem;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 0.9rem;
+      font-size: 0.9rem;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(51, 65, 85, 0.95);
+      color: var(--text-main);
+      transition: background var(--transition-fast),
+        border-color var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+      font-size: 0.86rem;
+    }
+
+    .contact-link:hover {
+      background: rgba(31, 41, 55, 0.98);
+      border-color: rgba(96, 165, 250, 0.9);
+      transform: translateY(-1px);
+      box-shadow: 0 0 18px rgba(96, 165, 250, 0.7);
+    }
+
+    footer {
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 1.5rem 0 2rem;
+      text-align: center;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      background: radial-gradient(circle at top, #020617, #020617 55%, #020617ee 100%);
+      margin-top: 1rem;
+    }
+
+    /* ------------------------------
+       Utilities
+    ------------------------------ */
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.95);
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    .chip-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent-yellow);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .divider {
+      height: 1px;
+      background: radial-gradient(circle at left, rgba(55, 65, 81, 0.7), transparent 55%);
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Animated background layers -->
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-orbits" aria-hidden="true">
+    <div class="orbit orbit--1">
+      <span class="orbit-dot"></span>
+    </div>
+    <div class="orbit orbit--2">
+      <span class="orbit-dot"></span>
+    </div>
+  </div>
+
+  <!-- ==========================
+       Header & Navigation
+  =========================== -->
+  <header>
+    <div class="container nav">
+      <a href="#home" class="nav-logo">
+        <span class="nav-logo-mark"></span>
+        <span>Accelarator 2025</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <div class="nav-toggle-bars">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-menu" aria-label="Main navigation">
+        <div class="nav-menu-inner">
+          <ul class="nav-links nav-links--desktop">
+            <li><a class="nav-link" href="#home" data-nav-target="home">Home</a></li>
+            <li><a class="nav-link" href="#about" data-nav-target="about">About</a></li>
+            <li><a class="nav-link" href="#agenda" data-nav-target="agenda">Agenda</a></li>
+            <li><a class="nav-link" href="#speakers" data-nav-target="speakers">Speakers</a></li>
+            <li><a class="nav-link" href="#registration" data-nav-target="registration">Registration</a></li>
+            <li><a class="nav-link" href="#contact" data-nav-target="contact">Contact</a></li>
+          </ul>
+          <!-- Mobile Navigation -->
+          <ul class="nav-links nav-links--mobile">
+            <li><a class="nav-link" href="#home" data-nav-target="home">Home</a></li>
+            <li><a class="nav-link" href="#about" data-nav-target="about">About</a></li>
+            <li><a class="nav-link" href="#agenda" data-nav-target="agenda">Agenda</a></li>
+            <li><a class="nav-link" href="#speakers" data-nav-target="speakers">Speakers</a></li>
+            <li><a class="nav-link" href="#registration" data-nav-target="registration">Registration</a></li>
+            <li><a class="nav-link" href="#contact" data-nav-target="contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <a href="#registration" class="btn btn-ghost-nav nav-cta">Register</a>
+    </div>
+  </header>
+
+  <!-- ==========================
+       Main Content
+  =========================== -->
+  <main>
+    <!-- Hero / Home Section -->
+    <section id="home">
+      <div class="container hero">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-intro-pill">
+              <span class="hero-intro-dot"></span>
+              <span>Computer Science Students’ Association • UoK</span>
+            </div>
+            <h1 class="hero-heading">
+              <span>Accelarator 2025</span>
+            </h1>
+            <p class="hero-tagline">Startup Growth • Entrepreneurship • Smart Investing</p>
+            <p class="hero-desc">
+              Introducing ACCELERATOR - a deep dive into startup growth, entrepreneurship and smart investing. Join us for an inspiring panel discussion where top founders, digital strategists and business consultants share real-world insights on personal growth, entrepreneurial thinking and navigating modern opportunities. Explore the worlds of startups, investing, digital innovation and unconventional career paths, while gaining the mindset and clarity needed to build your own future.
+            </p>
+
+            <div class="hero-meta">
+              <div class="hero-meta-item">
+                <div>
+                  <div class="hero-meta-label">Date</div>
+                  <div class="hero-meta-value">2nd December 2025</div>
+                </div>
+              </div>
+              <div class="hero-meta-item">
+                <div>
+                  <div class="hero-meta-label">Time</div>
+                  <div class="hero-meta-value">10:00 AM – 12:00 PM</div>
+                </div>
+              </div>
+              <div class="hero-meta-item">
+                <div>
+                  <div class="hero-meta-label">Venue</div>
+                  <div class="hero-meta-value">
+                    Auditorium, Faculty of Computing and Technology, University of Kelaniya
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <a href="#registration" class="btn btn-primary" data-scroll-to="registration">
+                Register Now
+              </a>
+              <a href="#agenda" class="btn btn-outline" data-scroll-to="agenda">
+                View Agenda
+              </a>
+            </div>
+
+            <div class="hero-note">
+              <span class="hero-note-pill">Organized by CSSA • University of Kelaniya</span>
+              <span>Open to undergraduates passionate about entrepreneurship, startups & investing.</span>
+            </div>
+          </div>
+
+          <!-- Right side: visual / mini schedule -->
+          <aside class="hero-showcase" aria-hidden="true">
+            <div class="hero-showcase-inner">
+              <div class="hero-showcase-header">
+                <div class="hero-showcase-label">Accelarator 2025 • Flow</div>
+                <div class="hero-showcase-badge">Live & On‑Campus</div>
+              </div>
+
+              <div class="hero-showcase-grid">
+                <div class="hero-showcase-item">
+                  <span class="hero-showcase-topic">
+                    <span class="hero-showcase-dot"></span>
+                    <span>Registration</span>
+                  </span>
+                  <span>9:30 – 10:00</span>
+                </div>
+                <div class="hero-showcase-item">
+                  <span class="hero-showcase-topic">
+                    <span class="hero-showcase-dot"></span>
+                    <span>Welcome & Introductions</span>
+                  </span>
+                  <span>10:00 – 10:15</span>
+                </div>
+                <div class="hero-showcase-item">
+                  <span class="hero-showcase-topic">
+                    <span class="hero-showcase-dot"></span>
+                    <span>Panel Discussion</span>
+                  </span>
+                  <span>10:15 – 11:30</span>
+                </div>
+                <div class="hero-showcase-item">
+                  <span class="hero-showcase-topic">
+                    <span class="hero-showcase-dot"></span>
+                    <span>Q&A & Closing</span>
+                  </span>
+                  <span>11:30 – 12:00</span>
+                </div>
+              </div>
+
+              <div class="hero-showcase-footer">
+                <div style="display:flex;align-items:center;gap:0.35rem;">
+                  <span class="hero-showcase-pulse"></span>
+                  <span>Limited on‑site seats for undergraduates.</span>
+                </div>
+                <span class="chip">
+                  <span class="chip-dot"></span>
+                  <span>Startups • Entrepreneurship • Investing</span>
+                </span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <p class="section-subtitle">About</p>
+        <h2 class="section-heading">About Accelarator 2025</h2>
+        <p class="section-description">
+          ACCELERATOR is a deep dive into startup growth, entrepreneurship and smart investing. Through an inspiring panel discussion, top founders, digital strategists and business consultants share real-world insights on personal growth, entrepreneurial thinking and navigating modern opportunities.
+        </p>
+
+        <div class="about-grid">
+          <div>
+            <p class="about-highlight">
+              Whether you're exploring entrepreneurship, interested in startups, or curious about smart investing, Accelarator 2025 will give you new ideas, fresh perspectives, and the clarity needed to build your own future. Connect with industry leaders and like‑minded students passionate about innovation and growth.
+            </p>
+            <p class="about-highlight">
+              You'll explore the worlds of startups, investing, digital innovation and unconventional career paths. Gain the mindset and practical insights from successful entrepreneurs, business consultants, and digital strategists who have navigated the journey from idea to execution.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Agenda Section -->
+    <section id="agenda">
+      <div class="container">
+        <p class="section-subtitle">Schedule</p>
+        <h2 class="section-heading">Event Agenda</h2>
+        <p class="section-description">
+          A focused 2-hour program featuring registration, welcome remarks, speaker introductions, an in-depth panel discussion on "Industry IT & Accelerating Tech Innovation", followed by audience Q&A and closing remarks.
+        </p>
+
+        <div class="agenda-wrapper">
+          <ol class="agenda-timeline">
+              <li class="agenda-item">
+                <p class="agenda-time">9:30 AM – 10:00 AM</p>
+                <p class="agenda-title">Registration</p>
+                <p class="agenda-desc">
+                  Member registration and seating.
+                </p>
+              </li>
+              <li class="agenda-item">
+                <p class="agenda-time">10:00 AM – 10:05 AM</p>
+                <p class="agenda-title">Welcome &amp; Opening Remarks</p>
+                <p class="agenda-desc">
+                  Introduction to Algo Rhythm &amp; Accelerator segment. Overview of panel theme: Emerging IT &amp; Technology Trends.
+                </p>
+              </li>
+              <li class="agenda-item">
+                <p class="agenda-time">10:05 AM – 10:15 AM</p>
+                <p class="agenda-title">Speaker Introductions</p>
+                <p class="agenda-desc">
+                  Sanjaya Elvitigala<br>Roshan Fernando<br>Amitha Amarasinghe
+                </p>
+              </li>
+              <li class="agenda-item">
+                <p class="agenda-time">10:15 AM – 11:30 AM</p>
+                <p class="agenda-title">Panel Discussion: "Industry IT &amp; Accelerating Tech Innovation"</p>
+                <p class="agenda-desc">
+                  Key focus areas:<br>• Career mindset expansion<br>• Personal growth &amp; self-awareness<br>• Entrepreneurship &amp; startup thinking<br>• Modern investment opportunities<br>• Digital innovation &amp; future-ready skills<br>• Strategic decision-making &amp; risk management<br>• Real-world success stories &amp; industry insights<br>• Building motivation &amp; professional confidence
+                </p>
+              </li>
+              <li class="agenda-item">
+                <p class="agenda-time">11:30 AM – 11:50 AM</p>
+                <p class="agenda-title">Audience Q&amp;A</p>
+                <p class="agenda-desc">
+                  Interactive session with attendees.
+                </p>
+              </li>
+              <li class="agenda-item">
+                <p class="agenda-time">11:50 AM – 12:00 PM</p>
+                <p class="agenda-title">Appreciation &amp; Closing</p>
+                <p class="agenda-desc">
+                  Closing remarks and appreciation.
+                </p>
+              </li>
+            </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section id="speakers">
+      <div class="container">
+        <p class="section-subtitle">Speakers</p>
+        <h2 class="section-heading">Speakers &amp; Panelists</h2>
+        <p class="section-description">
+          A curated line‑up of top founders, digital strategists and business consultants who will share real-world insights on startup growth, entrepreneurship, smart investing, and navigating modern opportunities.
+        </p>
+
+        <div class="speakers-grid">
+          <!-- Speaker card 1 -->
+          <article class="speaker-card">
+            <h3 class="speaker-name">Mr. Sanjaya Elvitigala</h3>
+            <p class="speaker-role">Founder – MayaHive.com | eLearning.lk | WisdomLMS.io | stemfactory.io</p>
+            <div class="speaker-tag-row">
+              <span class="speaker-tag">Entrepreneur</span>
+              <span class="speaker-tag">EdTech Innovator</span>
+              <span class="speaker-tag">Digital Learning</span>
+            </div>
+            <p class="speaker-bio">
+              Mr. Sanjaya Elvitigala is an accomplished entrepreneur with over 18 years of experience in Sri Lanka's IT and technology sector. He is the visionary founder behind several successful ventures, including MayaHive.com, eLearning.lk, WisdomLMS.io, and stemfactory.io, each contributing to the advancement of digital education and technology-driven learning solutions. Beginning his entrepreneurial journey in 2006 with MayaHive (formerly Maya Creations), he transformed a modest startup into a leading web solutions provider. His flagship product, WisdomLMS.io, stands as a state-of-the-art Learning Management System designed for educators, institutions, and coaching professionals.
+            </p>
+          </article>
+
+          <!-- Speaker card 2 -->
+          <article class="speaker-card">
+            <h3 class="speaker-name">Dr. Roshan Fernando</h3>
+            <p class="speaker-role">Certified &amp; Registered Investment Advisor – Colombo Stock Exchange</p>
+            <div class="speaker-tag-row">
+              <span class="speaker-tag">Business Consultant</span>
+              <span class="speaker-tag">Finance Educator</span>
+              <span class="speaker-tag">Media Presenter</span>
+            </div>
+            <p class="speaker-bio">
+              Dr. Roshan Fernando is a distinguished business consultant, financial advisor, and corporate educator with over 20 years of professional experience. As a certified and registered investment advisor with the Colombo Stock Exchange, he specializes in strategic financial planning, investment management, and business development. He is widely recognized as a dynamic media personality, serving as a Biz News Presenter for leading Sri Lankan television networks including Hiru TV and TV Derana. As the founder of the MasterMind Roshan YouTube channel, he has built a thriving educational community with 76,000+ subscribers, offering content on investing, entrepreneurship, and personal finance.
+            </p>
+          </article>
+
+          <!-- Speaker card 3 -->
+          <article class="speaker-card">
+            <h3 class="speaker-name">Mr. Amitha Amarasinghe</h3>
+            <p class="speaker-role">CEO – Asia Pacific Institute of Digital Marketing (APIDM)</p>
+            <div class="speaker-tag-row">
+              <span class="speaker-tag">Digital Marketing</span>
+              <span class="speaker-tag">E-commerce</span>
+              <span class="speaker-tag">Industry Pioneer</span>
+            </div>
+            <p class="speaker-bio">
+              Mr. Amitha Amarasinghe is a highly respected digital marketing specialist with over 20 years of experience in e-commerce, social media marketing, and performance-driven digital strategy. He is recognized as one of the pioneering figures who shaped Sri Lanka's digital marketing landscape. He began his career in 2004 as an e-commerce executive at Roomsnet.com, rising to the role of e-commerce manager within six years. In 2010, he joined Ogilvy to establish Neo@Ogilvy, Sri Lanka's first dedicated digital advertising division, which became the country's leading digital agency by 2020. Since 2021, he has served as the Chief Executive Officer of APIDM, an institute he co-founded, dedicated to equipping professionals and students with industry-relevant digital skills.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration">
+      <div class="container">
+        <p class="section-subtitle">Registration</p>
+        <h2 class="section-heading">Register Now</h2>
+        <p class="section-description">
+          Limited seats are available for this on‑campus experience. Reserve your spot and we’ll
+          send you a confirmation email with final details closer to the event.
+        </p>
+
+        <div class="registration-card">
+          <p>
+            <strong>Limited seats available.</strong> Reserve your spot now by filling in the form
+            below. All fields marked with <span style="color:#fb7185;">*</span> are required.
+          </p>
+
+          <form id="registration-form" novalidate>
+            <div class="form-grid">
+              <!-- Full Name -->
+              <div class="form-field">
+                <label class="form-label" for="full-name">
+                  Full Name <span>*</span>
+                </label>
+                <input
+                  type="text"
+                  id="full-name"
+                  name="fullName"
+                  class="form-input"
+                  placeholder="Enter your full name"
+                  required
+                />
+              </div>
+
+              <!-- University Email -->
+              <div class="form-field">
+                <label class="form-label" for="email">
+                  University Email <span>*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="name@stu.uok.lk"
+                  required
+                />
+              </div>
+
+              <!-- Faculty / Department -->
+              <div class="form-field">
+                <label class="form-label" for="faculty">
+                  Faculty / Department <span>*</span>
+                </label>
+                <input
+                  type="text"
+                  id="faculty"
+                  name="faculty"
+                  class="form-input"
+                  placeholder="e.g. Faculty of Computing and Technology"
+                  required
+                />
+              </div>
+
+              <!-- Year of Study -->
+              <div class="form-field">
+                <label class="form-label" for="year">
+                  Year of Study <span>*</span>
+                </label>
+                <select id="year" name="year" class="form-select" required>
+                  <option value="">Select your year</option>
+                  <option value="1st">1st Year</option>
+                  <option value="2nd">2nd Year</option>
+                  <option value="3rd">3rd Year</option>
+                  <option value="4th">4th Year</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <!-- Phone Number -->
+              <div class="form-field">
+                <label class="form-label" for="phone">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="form-input"
+                  placeholder="Optional contact number"
+                />
+                <p class="form-help">Used only for last‑minute updates (if needed).</p>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">
+                Submit Registration
+              </button>
+              <span id="form-status" class="form-status" aria-live="polite"></span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <p class="section-subtitle">Contact</p>
+        <h2 class="section-heading">Contact Us</h2>
+        <p class="section-description">
+          For any inquiries about Accelarator 2025, the agenda, or registration, feel free to get in
+          touch with the Computer Science Students’ Association (CSSA).
+        </p>
+
+        <div class="contact-card">
+          <p>
+            Have a question? Reach out and the CSSA team will be happy to help.
+          </p>
+
+          <div class="contact-links">
+            <a href="mailto:cssa@example.com" class="contact-link">
+              <span>Email</span>
+              <span>cssa@example.com</span>
+            </a>
+            <a href="#" class="contact-link">
+              <span>Instagram</span>
+              <span>@cssa_uok (placeholder)</span>
+            </a>
+            <a href="#" class="contact-link">
+              <span>Facebook</span>
+              <span>CSSA - University of Kelaniya (placeholder)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================
+       Footer
+  =========================== -->
+  <footer>
+    <div class="container">
+      <p>
+        Copyright © 2025 Accelarator 2025 • Design by Nadun Madagama • Computer Science Students’ Association (CSSA), University of Kelaniya.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ==========================
+       Scripts
+  =========================== -->
+  <script>
+    // Smooth scrolling for nav links & buttons
+    (function () {
+      const OFFSET = 70; // approximate fixed header height
+
+      function smoothScrollTo(targetId) {
+        const target = document.getElementById(targetId);
+        if (!target) return;
+
+        const rect = target.getBoundingClientRect();
+        const absoluteY = rect.top + window.scrollY;
+        const offsetY = absoluteY - OFFSET;
+
+        window.scrollTo({
+          top: offsetY,
+          behavior: "smooth",
+        });
+      }
+
+      // Handle clicks on elements with data-scroll-to OR nav links
+      document.addEventListener("click", function (event) {
+        const trigger = event.target.closest("[data-scroll-to], .nav-link[href^='#']");
+        if (!trigger) return;
+
+        const href = trigger.getAttribute("href");
+        const explicitTarget = trigger.getAttribute("data-scroll-to");
+
+        const sectionId = explicitTarget || (href && href.startsWith("#") ? href.slice(1) : null);
+
+        if (!sectionId) return;
+
+        event.preventDefault();
+        smoothScrollTo(sectionId);
+
+        // If mobile menu is open, close after navigation
+        closeMobileMenu();
+      });
+    })();
+
+    // Mobile navigation toggle
+    (function () {
+      const toggle = document.querySelector(".nav-toggle");
+      const menu = document.querySelector(".nav-menu");
+
+      if (!toggle || !menu) return;
+
+      toggle.addEventListener("click", function () {
+        const isOpen = toggle.classList.toggle("open");
+        menu.classList.toggle("open", isOpen);
+        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+
+      // Close when clicking outside on mobile
+      document.addEventListener("click", function (event) {
+        if (!menu.classList.contains("open")) return;
+        if (event.target.closest("header")) return;
+        toggle.classList.remove("open");
+        menu.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+
+      // Expose helper for smooth scroll handler
+      window.closeMobileMenu = function () {
+        toggle.classList.remove("open");
+        menu.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+      };
+    })();
+
+    // Active nav link on scroll
+    (function () {
+      const sections = document.querySelectorAll(
+        "section[id='home'], section[id='about'], section[id='agenda'], section[id='speakers'], section[id='registration'], section[id='contact']"
+      );
+      const navLinks = document.querySelectorAll(".nav-link[data-nav-target]");
+
+      if (!sections.length || !navLinks.length) return;
+
+      const sectionById = {};
+      sections.forEach((section) => {
+        sectionById[section.id] = section;
+      });
+
+      function setActiveNav(id) {
+        navLinks.forEach((link) => {
+          const target = link.getAttribute("data-nav-target");
+          if (target === id) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      }
+
+      // Use IntersectionObserver if available for smoother behavior
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                setActiveNav(entry.target.id);
+              }
+            });
+          },
+          {
+            rootMargin: "-60% 0px -35% 0px",
+            threshold: 0.2,
+          }
+        );
+
+        sections.forEach((section) => observer.observe(section));
+      } else {
+        // Fallback: scroll event
+        window.addEventListener("scroll", function () {
+          let currentId = "home";
+          const scrollY = window.scrollY + 80;
+
+          sections.forEach((section) => {
+            const top = section.offsetTop;
+            if (scrollY >= top) {
+              currentId = section.id;
+            }
+          });
+
+          setActiveNav(currentId);
+        });
+      }
+
+      // Set initial active link
+      setActiveNav("home");
+    })();
+
+    // Registration form handling
+    (function () {
+      const form = document.getElementById("registration-form");
+      const statusEl = document.getElementById("form-status");
+
+      if (!form || !statusEl) return;
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Basic client-side validation
+        const requiredFields = ["full-name", "email", "faculty", "year"];
+        let valid = true;
+
+        requiredFields.forEach((id) => {
+          const field = document.getElementById(id);
+          if (!field) return;
+
+          if (!field.value.trim()) {
+            field.classList.add("form-error");
+            valid = false;
+          } else {
+            field.classList.remove("form-error");
+          }
+        });
+
+        if (!valid) {
+          statusEl.textContent = "Please fill in all required fields.";
+          statusEl.classList.add("visible", "error");
+          alert("Please fill in all required fields before submitting.");
+          return;
+        }
+
+        // Show success message
+        statusEl.textContent = "Thank you for registering! Please check your email for updates.";
+        statusEl.classList.remove("error");
+        statusEl.classList.add("visible");
+
+        alert("Thank you for registering for Accelarator 2025!");
+
+        // Optionally reset form
+        form.reset();
+      });
+    })();
+
+  </script>
+</body>
+</html>
+```
